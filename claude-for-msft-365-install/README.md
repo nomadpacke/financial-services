@@ -28,3 +28,6 @@ Then inside the session: `/claude-for-msft-365-install:setup`
   your AWS region and model ID — I used `anthropic.claude-3-5-sonnet-20241022-v2:0`.
 - Make sure your Azure app registration has `offline_access` in its scopes or
   the Graph calls in `update-user-attrs` will silently fail on token refresh.
+- **Tip:** If the `setup` wizard times out during resource provisioning, you can
+  re-run `/claude-for-msft-365-install:manifest` and `/claude-for-msft-365-install:consent`
+  individually — they're idempotent and safe to run again without re-provisioning.
