@@ -21,3 +21,10 @@ Then inside the session: `/claude-for-msft-365-install:setup`
 | `/claude-for-msft-365-install:consent` | Azure admin consent URL for the add-in's app registration |
 | `/claude-for-msft-365-install:update-user-attrs` | Write per-user config via Microsoft Graph extension attributes |
 | `/claude-for-msft-365-install:bootstrap` | Build the bootstrap endpoint — per-user MCP servers, skills, dynamic config |
+
+## Notes (personal)
+
+- I'm using this with **Bedrock** (us-east-1). The `setup` wizard will ask for
+  your AWS region and model ID — I used `anthropic.claude-3-5-sonnet-20241022-v2:0`.
+- Make sure your Azure app registration has `offline_access` in its scopes or
+  the Graph calls in `update-user-attrs` will silently fail on token refresh.
